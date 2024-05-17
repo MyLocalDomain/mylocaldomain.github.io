@@ -1,18 +1,47 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    
-    <title>Local server</title>
-    
-    
-    
-    </head>
-
-
-<body background='image.jpg'>
-    <audio controls autoplay unmuted src="music.mp3">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper with Autoplay Sound</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('wallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        audio {
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <audio id="myAudio">
+        <source src="audio-file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
-    </body>
+    <button onclick="playAudio()">Play Audio</button>
 
-
-
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+            document.querySelector("button").style.display = "none";
+        }
+    </script>
+</body>
 </html>
