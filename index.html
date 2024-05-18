@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="text" id="loginUsername" placeholder="Username">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+    </div>
+    <div class="signup-container" style="display: none;">
+        <h1>Sign Up</h1>
+        <input type="text" id="signupUsername" placeholder="Username">
+        <input type="password" id="signupPassword" placeholder="Password">
+        <button onclick="signup()">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+    <div class="banking-container" style="display: none;">
+        <h1>Banking Dashboard</h1>
+        <div>
+            <p>Account Balance: $<span id="balance">9999999999999999999999999</span></p>
+        </div>
+        <div>
+            <h2>Transfer Money</h2>
+            <input type="text" id="recipient" placeholder="Recipient">
+            <input type="number" id="amount" placeholder="Amount">
+            <button onclick="transferMoney()">Transfer</button>
+        </div>
+        <p id="message"></p>
+    </div>
+    <audio id="loginMusic" src="background-music.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
