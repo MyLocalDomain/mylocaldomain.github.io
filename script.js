@@ -1,19 +1,9 @@
-const users = [
-    { username: "user1", password: "password1" },
-    { username: "user2", password: "password2" },
-    { username: "user3", password: "password3" }
-];
-
-let currentUser = null;
-
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    const user = users.find(u => u.username === username && u.password === password);
-
-    if (user) {
-        currentUser = user;
+    // For simplicity, let's assume any non-empty username and password is valid
+    if (username && password) {
         document.querySelector('.login-container').style.display = 'none';
         document.querySelector('.banking-container').style.display = 'block';
         
@@ -21,16 +11,11 @@ function login() {
         const music = document.getElementById('loginMusic');
         music.play();
     } else {
-        alert('Invalid username or password.');
+        alert('Please enter username and password.');
     }
 }
 
 function transferMoney() {
-    if (!currentUser) {
-        alert("Please log in first.");
-        return;
-    }
-
     const recipient = document.getElementById('recipient').value;
     const amountInput = document.getElementById('amount');
     const balanceElement = document.getElementById('balance');
